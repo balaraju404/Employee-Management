@@ -3,7 +3,8 @@
     <div class="form-group">
       <label for="pagelimit">Page Limit : </label>
       <select class="mx-1 px-2" name="pagelimit" id="pagelimit" (change)="onPageLimitChange($event)">
-        <option *ngFor="let pagelimit of pageLimitArray" [value]="pagelimit" [selected]="pagelimit === currentPageLimit">{{pagelimit}}</option>
+        <option *ngFor="let pagelimit of pageLimitArray" [value]="pagelimit"
+          [selected]="pagelimit === currentPageLimit">{{pagelimit}}</option>
       </select>
     </div>
   </div>
@@ -12,7 +13,8 @@
     <nav aria-label="Page navigation">
       <ul class="pagination justify-content-end">
         <li class="page-item" [class.disabled]="currentPage === 1">
-          <button type="button" class="page-link" (click)="onPreviousPage()">&laquo; Previous</button>
+          <button type="button" class="page-link" (click)="onPreviousPage()"data-bs-toggle="popover"
+          data-bs-trigger="hover" data-bs-content="Click to go to Previous Page" appBootstrapPopover>&laquo; Previous</button>
         </li>
         <ng-container *ngFor="let page of pagesArray">
           <li class="page-item" [class.active]="page === currentPage">
@@ -20,9 +22,12 @@
           </li>
         </ng-container>
         <li class="page-item" [class.disabled]="currentPage === totalPages">
-          <button type="button" class="page-link" (click)="onNextPage()">Next &raquo;</button>
+          <button type="button" class="page-link" (click)="onNextPage()" data-bs-toggle="popover"
+            data-bs-trigger="hover" data-bs-content="Click to go to Next Page" appBootstrapPopover>Next &raquo;</button>
+
         </li>
       </ul>
     </nav>
   </div>
 </div>
+

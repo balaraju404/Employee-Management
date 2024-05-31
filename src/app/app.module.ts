@@ -15,6 +15,9 @@ import { EditEmployeeComponent } from './edit-employee/edit-employee.component';
 import { LoadingSpinComponent } from './loading-spin/loading-spin.component';
 import { PaginationComponent } from './pagination/pagination.component';
 
+import { BootstrapPopoverDirective } from './directives/popover.directive';
+import { PascalCasePipe } from './pipes/pascel-case.pipe';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +28,9 @@ import { PaginationComponent } from './pagination/pagination.component';
     PopUpAlertsComponent,
     EditEmployeeComponent,
     LoadingSpinComponent,
-    PaginationComponent
+    PaginationComponent,
+    BootstrapPopoverDirective,
+    PascalCasePipe
   ],
   imports: [
     BrowserModule,

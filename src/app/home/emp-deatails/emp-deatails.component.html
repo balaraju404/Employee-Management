@@ -56,14 +56,17 @@
       <ng-container *ngFor="let emp of empDetails; let i=index">
         <tr *ngIf="checkRecord(i)">
           <td>{{i+1}}</td>
-          <td>{{emp.name}}</td>
+          <td>{{emp.name | pascalCase}}</td>
           <td>{{emp.age}}</td>
           <td>{{emp.workMail}}</td>
           <td>{{emp.position}}</td>
           <td>{{emp.team}}</td>
           <td>
-            <i class="fas fa-edit mx-1 text-white bg-dark p-1 rounded" (click)="onEdit(emp)"></i>
-            <i class="fas fa-trash-alt text-white bg-danger p-1 rounded" (click)="onDelete(emp._id)"></i>
+            <i class="fas fa-edit mx-1 text-white bg-dark p-1 rounded" (click)="onEdit(emp)" data-bs-toggle="popover"
+              data-bs-trigger="hover" data-bs-content="Click to Edit" appBootstrapPopover></i>
+            <i class="fas fa-trash-alt text-white bg-danger p-1 rounded" (click)="onDelete(emp._id)"
+              data-bs-toggle="popover" data-bs-trigger="hover" data-bs-content="Click to Delete"
+              appBootstrapPopover></i>
           </td>
         </tr>
       </ng-container>
