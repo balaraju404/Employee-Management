@@ -1,0 +1,11 @@
+
+<div class="alert-container">
+  <div class="sucess-alert" *ngIf="status==='success'">
+    {{success}}
+    <button class="btn btn-close" type="button" (click)="onClose()"></button>
+  </div>
+  <div class="danger-alert" *ngIf="status==='error'">
+    {{ error}}
+    <button class="btn btn-close" type="button" (click)="onClose()"></button>
+  </div>
+</div>

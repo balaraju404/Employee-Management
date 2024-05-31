@@ -1,0 +1,90 @@
+<div class="container">
+  <!-- Filter Form -->
+  <div class="row">
+    <div class="col-md-10">
+      <form #filterForm="ngForm" (ngSubmit)="onFilter(filterForm.value)" class="row form-inline">
+        <!-- Sort By -->
+        <div class="col-sm-3 form-group mr-2">
+          <div class="input-group">
+            <select name="sortBy" id="sortBy" ngModel class="custom-select form-control">
+              <option value="" disabled selected hidden>Sort By</option>
+              <option value="name">Name</option>
+              <option value="age">Age</option>
+              <option value="workMail">Work Mail</option>
+              <option value="position">Position</option>
+              <option value="team">Team</option>
+            </select>
+          </div>
+        </div>
+        <!-- Sort Order -->
+        <div class="col-sm-3 form-group mr-2">
+          <div class="input-group">
+            <select name="sortOrder" id="sortOrder" ngModel class="custom-select form-control">
+              <option value="" disabled selected hidden>Sort Order</option>
+              <option value="asc">Ascending</option>
+              <option value="desc">Descending</option>
+            </select>
+          </div>
+        </div>
+        <!-- Search Input -->
+        <div class="col-sm-3 form-group mr-2">
+          <input type="text" class="form-control" name="searchValue" placeholder="Search" ngModel required>
+        </div>
+        <!-- Apply Button -->
+        <div class="col-sm-1 form-group">
+          <button type="submit" class="btn btn-outline-secondary">Apply</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <hr>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>S.No</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Work Mail</th>
+        <th>Position</th>
+        <th>Team</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngFor="let emp of empDetails; let i=index">
+        <tr *ngIf="checkRecord(i)">
+          <td>{{i+1}}</td>
+          <td>{{emp.name}}</td>
+          <td>{{emp.age}}</td>
+          <td>{{emp.workMail}}</td>
+          <td>{{emp.position}}</td>
+          <td>{{emp.team}}</td>
+          <td>
+            <i class="fas fa-edit mx-1 text-white bg-dark p-1 rounded" (click)="onEdit(emp)"></i>
+            <i class="fas fa-trash-alt text-white bg-danger p-1 rounded" (click)="onDelete(emp._id)"></i>
+          </td>
+        </tr>
+      </ng-container>
+
+    </tbody>
+  </table>
+
+  <div class="placeholder-glow" *ngIf="isLoading">
+    <span class="placeholder col-12"></span>
+    <span class="placeholder col-12"></span>
+    <span class="placeholder col-12"></span>
+    <span class="placeholder col-12"></span>
+    <span class="placeholder col-12"></span>
+    <span class="placeholder col-12"></span>
+    <span class="placeholder col-12"></span>
+    <span class="placeholder col-12"></span>
+  </div>
+
+  <app-pagination></app-pagination>
+
+  <app-edit-employee *ngIf="editStatus"></app-edit-employee>
+  <app-loading-spin *ngIf="isLoading"></app-loading-spin>
+
+</div>

@@ -1,0 +1,46 @@
+
+<div class="dialog-container">
+  <form #empForm="ngForm" (ngSubmit)="onSubmit(employee._id,empForm)" class="dialog-form">
+    <!-- Close button -->
+    <button class="close-icon" type="button" (click)="onClose()">X</button>
+
+    <!-- Name input -->
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" [(ngModel)]="employee.name" required class="form-control">
+    </div>
+
+    <!-- Age input -->
+    <div class="form-group">
+      <label for="age">Age</label>
+      <input type="number" id="age" name="age" [(ngModel)]="employee.age" required class="form-control">
+    </div>
+
+    <!-- Position select -->
+    <div class="form-group">
+      <label for="position">Position</label>
+      <select name="position" id="position" [(ngModel)]="employee.position" required class="form-select">
+        <option *ngFor="let position of positions" [value]="position">{{position}}</option>
+        <option value="Other">Other</option>
+      </select>
+    </div>
+
+    <!-- Team select -->
+    <div class="form-group">
+      <label for="team">Team</label>
+      <select name="team" id="team" [(ngModel)]="employee.team" required class="form-select">
+        <option *ngFor="let team of teams" [value]="team">{{team}}</option>
+        <option value="None">None</option>
+      </select>
+    </div>
+
+    <!-- Submit button -->
+    <div class="form-group">
+      <button type="submit" class="btn btn-sm btn-outline-primary">Update Employee</button>
+    </div>
+
+  </form>
+</div>
+
+
+<app-loading-spin *ngIf="isLoading"></app-loading-spin>

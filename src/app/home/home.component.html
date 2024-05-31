@@ -1,0 +1,9 @@
+<div class="container-fluid d-flex justify-content-end">
+  <button class="btn btn-primary m-2" (click)="onAddEmp()">Add Employee</button>
+</div>
+
+<router-outlet></router-outlet>
+
+<app-add-emp *ngIf="addEmpStatus"></app-add-emp>
+
+<app-pop-up-alerts *ngIf="alertStatus"></app-pop-up-alerts>

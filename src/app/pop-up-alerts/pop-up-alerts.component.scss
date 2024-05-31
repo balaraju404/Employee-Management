@@ -1,0 +1,38 @@
+.alert-container {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  z-index: 9999;
+}
+.sucess-alert{
+  width: 250px;
+  background-color: rgba(0, 255, 0, 0.89);
+  color: #fafafa;
+  letter-spacing: 1px;
+  padding: 7px 10px;
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 5px;
+  box-shadow: 0 0 10px -5px black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.danger-alert{
+  width: 200px;
+  background-color: rgb(211, 4, 4);
+  color: #fafafa;
+  letter-spacing: 1px;
+  padding: 7px 20px;
+  border: 1px solid rgb(255, 255, 255);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.close-icon {
+  border: none;
+  font-size: 22px;
+  background-color: transparent;
+  color: rgba(0, 0, 0, 0.925);
+}
