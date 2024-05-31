@@ -1,5 +1,6 @@
 <div class="container-fluid d-flex justify-content-end">
-  <button class="btn btn-primary m-2" (click)="onAddEmp()">Add Employee</button>
+  <button class="btn btn-primary m-2" (click)="onAddEmp()" data-bs-toggle="popover" data-bs-trigger="hover"
+    data-bs-placement="bottom" data-bs-content="Click to Edit" appBootstrapPopover>Add Employee</button>
 </div>
 
 <router-outlet></router-outlet>
