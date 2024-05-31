@@ -1,6 +1,7 @@
 <div class="dialog-container">
   <form #empForm="ngForm" (ngSubmit)="onSubmit(empForm)" class="dialog-form">
-    <button class="close-icon" type="button" (click)="onClose()">X</button>
+    <button class="close-icon" type="button" (click)="onClose()" data-bs-toggle="popover" data-bs-trigger="hover"
+      data-bs-placement="bottom" data-bs-content="Click to Close" appBootstrapPopover>X</button>
 
     <div class="form-group">
       <label for="name">Name</label>

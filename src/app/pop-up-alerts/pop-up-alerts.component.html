@@ -2,10 +2,12 @@
 <div class="alert-container">
   <div class="sucess-alert" *ngIf="status==='success'">
     {{success}}
-    <button class="btn btn-close" type="button" (click)="onClose()"></button>
+    <button class="btn btn-close" type="button" (click)="onClose()" data-bs-toggle="popover" data-bs-trigger="hover"
+    data-bs-placement="bottom" data-bs-content="Click to Close" appBootstrapPopover></button>
   </div>
   <div class="danger-alert" *ngIf="status==='error'">
     {{ error}}
-    <button class="btn btn-close" type="button" (click)="onClose()"></button>
+    <button class="btn btn-close" type="button" (click)="onClose()" data-bs-toggle="popover" data-bs-trigger="hover"
+    data-bs-placement="bottom" data-bs-content="Click to Close" appBootstrapPopover></button>
   </div>
 </div>

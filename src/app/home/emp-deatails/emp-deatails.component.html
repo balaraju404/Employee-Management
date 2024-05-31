@@ -6,7 +6,7 @@
         <!-- Sort By -->
         <div class="col-sm-3 form-group mr-2">
           <div class="input-group">
-            <select name="sortBy" id="sortBy" ngModel class="custom-select form-control">
+            <select name="sortBy" id="sortBy" ngModel class="custom-select form-select">
               <option value="" disabled selected hidden>Sort By</option>
               <option value="name">Name</option>
               <option value="age">Age</option>
@@ -19,7 +19,7 @@
         <!-- Sort Order -->
         <div class="col-sm-3 form-group mr-2">
           <div class="input-group">
-            <select name="sortOrder" id="sortOrder" ngModel class="custom-select form-control">
+            <select name="sortOrder" id="sortOrder" ngModel class="custom-select form-select">
               <option value="" disabled selected hidden>Sort Order</option>
               <option value="asc">Ascending</option>
               <option value="desc">Descending</option>
@@ -62,10 +62,10 @@
           <td>{{emp.position}}</td>
           <td>{{emp.team}}</td>
           <td>
-            <i class="fas fa-edit mx-1 text-white bg-dark p-1 rounded" (click)="onEdit(emp)" data-bs-toggle="popover"
-              data-bs-trigger="hover" data-bs-content="Click to Edit" appBootstrapPopover></i>
+            <i class="fas fa-edit mx-2 text-white bg-dark p-1 rounded" (click)="onEdit(emp)" data-bs-toggle="popover"
+              data-bs-trigger="hover" data-bs-placement="top" data-bs-content="Click to Edit" appBootstrapPopover></i>
             <i class="fas fa-trash-alt text-white bg-danger p-1 rounded" (click)="onDelete(emp._id)"
-              data-bs-toggle="popover" data-bs-trigger="hover" data-bs-content="Click to Delete"
+              data-bs-toggle="popover" data-bs-placement="top" data-bs-trigger="hover" data-bs-content="Click to Delete"
               appBootstrapPopover></i>
           </td>
         </tr>
